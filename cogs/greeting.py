@@ -1,6 +1,14 @@
 import discord
 from discord.commands import slash_command, Option
 from discord.ext import commands
+from dotenv import load_dotenv
+import os
+
+load_dotenv("../.env")
+
+welcomeId = os.getenv('WELCOMECHANNEL_ID')
+
+
 
 
 class Greeting(commands.Cog, name="Greeting"):
@@ -22,7 +30,7 @@ class Greeting(commands.Cog, name="Greeting"):
         )
         embed.set_thumbnail(url=member.display_avatar.url)
         
-        channel = await self.bot.fetch_channel(930479442214666240)
+        channel = await self.bot.fetch_channel(welcomeId)
         await channel.send(embed=embed)
 
 
