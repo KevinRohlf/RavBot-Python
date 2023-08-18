@@ -11,7 +11,14 @@ guildId = os.getenv('GUILD_ID')
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
-bot = discord.Bot(intents = intents)
+
+status = discord.Status.online
+activity = discord.Activity(type=discord.ActivityType.watching, name="Drachenlord")
+bot = discord.Bot(
+    intents = intents,
+    status = status,
+    activity = activity
+    )
 # debug_guilds = [guildId]
 
 for filename in os.listdir("cogs"):
