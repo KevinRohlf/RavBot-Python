@@ -24,8 +24,8 @@ class Greeting(commands.Cog, name="Greeting"):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         embed = discord.Embed(
-            title="Metal Leude",
-            description=f"{member.mention} ist ein Hater",
+            title="Willkommen",
+            description=f"Moin Servus Moin {member.mention}",
             color= discord.Color.random()
         )
         embed.set_thumbnail(url=member.display_avatar.url)
